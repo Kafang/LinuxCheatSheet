@@ -1,0 +1,152 @@
+Linux Commandline Cheat Sheet
+
+
+DATEISYSTEM:
+
+ls:
+ls Listet die Dateien im Aktuellen Verzeichnisses auf
+
+pwd:
+pwd gibt den Pfad des Aktuellen Verzeichnisses aus
+
+cd NACH:
+cd wechselt das Aktuelle Verzeichnis
+
+cp VON NACH:
+cp kopiert eine Datei von einem Ort an einen anderen
+
+mv VON NACH:
+Bewegt eine Datei im Dateisystem
+
+file DATEI:
+gibt den Datentyp der Datei aus
+
+locate DATEI:
+sucht das Dateisystem nach dem Dateinamen ab und gibt den Pfad aus, wenn er vorhanden ist
+
+updatedb:
+Updated die Datenbank, die von locate genutzt wird
+
+rm PFAD:
+löscht die Datei (Kein Papierkorb vorhanden, ERST DENKEN, DANN TIPPEN)
+
+mkdir NAME:
+erzeugt ein Verzeichnis mit dem angegebenen Namen
+
+rmdir NAME:
+löscht das angegebene Verzeichnis
+
+
+
+
+
+DATEIEN:
+
+touch DATEI:
+Ändert den Zeitstempel der Dateie, wenn sie nicht existiert, wird sie angelegt
+
+cat DATEI:
+gibt den Inhalt der Datei nach stdout aus 
+
+head DATEI:
+gibt den Anfang der Datei aus
+
+tail DATEI:
+gibt das Ende der Datei aus
+
+nano DATEI:
+öffnet die Datei im einsteigerfreundlichen Editor nano
+
+vim DATEI:
+öffnet die Datei im Besten Editor den es gibt :-)
+
+grep MUSTER:
+sucht nach dem Muster in stdin und gibt nur die Zeilen aus, in denen das Muster vorkommt (SEHR NÜTZLICH)
+
+SYSTEM:
+
+startx:
+startet die Desktopumgebung
+
+reboot:
+Startet das System neu
+
+shutdown now:
+Fährt das System herunter
+
+uname:
+Gibt Informationen über das System aus
+
+dmesg:
+Gibt Boot Informationen aus
+
+
+PYTHON:
+
+python2:
+Python 2.7 im Interaktiven Modus
+
+python3:
+Python 3.6 im Interaktiven Modus
+
+python2 DATEI:
+Führt die Datei als Python 2.7 Code aus
+
+python3 DATEI:
+Führt die Datei als Python 3.6 Code aus
+
+BENUTZER:
+
+login USER:
+Als anderer User anmelden
+
+sudo COMMAND:
+führt den folgenden Befehl als Benutzer root ("Administrator") aus, wenn der Nutzer die Berechtigung dazu hat. ACHTUNG: WILDES EXPERIMENTIEREN AM SYSTEM KANN DAS SYSTEM GEFÄRDEN!!!!!!!!
+
+HILFE:
+
+man IRGENDWAS:
+gibt eine Anleitung zu einem Befehl oder änlichem aus
+
+Das Argument --help an den Funktionsaufruf anhängen (Funktioniert fast überall)
+Bsp: sudo --help
+
+
+
+ALLGEMEINES:
+
+Tastaturlayout Global auf Deutsch stellen:
+In der Datei /etc/default/keyboard die Zeile, die mit XKBLAYOUT beginnt durch XKBLAYOUT="de" ersetzen.(Erfordert root rechte)
+ DAS LEICHTFERTIGE EDITIEREN DIESER DATEI KANN DAS SYSTEM GEFÄRDEN!
+
+Strg-C beendet das aktuell im Vordergrund laufende Programm (Das signal kann vom Programm abgefangen und ignoriert werden! Strg-D für bockige Programme verwenden)
+
+Strg-D killt das aktuelle Programm im Vordergrund
+
+Ein & hinter einem Programmaufruf startet das Programm im Hintergrund
+Bsp: python3 ./webserver.py&
+
+Der pfad . zeigt immer auf das Aktuelle Verzeichnis,
+.. auf das Verzeichnis darüber
+
+Das Wurzelverzeichnis heißt / (und nicht C: )
+
+stdout eines Programms kann man mit | nach stdin eines anderen Programms umleiten
+Bsp: dmesg | grep "usb" gibt nur alle Zeilen von dmesg aus, in denen "usb" vorkommt
+
+stdout eines Programms kann mit > in eine Datei geschrieben werden und mit >> an eine Datei angehängt werden.
+Bsp: cat logfile.log | grep "error" > errors.log
+
+stdin kann mit < aus einer Datei gelesen werden
+Bsp: grep "class " < foo.py
+Äquivalent zu: cat foo.py | grep "class "
+
+stderr kann mit 2> in eine Datei geschrieben werden
+ 
+Im Verzeichnis /dev befinden sich sogenannte Device Dateien, diese repräsentieren zum Beispiel ein Hardware Gerät und bieten Möglichkeiten mit der Hadware, wie mit einer Datei zu interagieren.
+
+
+
+
+
+
